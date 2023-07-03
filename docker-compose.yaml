@@ -1,0 +1,15 @@
+services:
+  user-service:
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    ports:
+      - "${USER_SERVICE_PORT}:${USER_SERVICE_PORT}"
+    environment:
+      - PORT=${USER_SERVICE_PORT}
+      - DB_USER=${USER_SERVICE_DB_USER}
+      - DB_PASSWORD=${USER_SERVICE_DB_PASSWORD}
+      - DB_CLUSTER=${USER_SERVICE_DB_CLUSTER}
+      - DB_NAME=${USER_SERVICE_DB_NAME}
+    volumes:
+      - ./user-service/:/app/
