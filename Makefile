@@ -2,4 +2,7 @@ dev:
 	docker compose up --build
 
 install-dependencies:
-	./dependencies.sh
+	./install-dependencies.sh
+
+gen-proto:
+	./gen-protos.sh

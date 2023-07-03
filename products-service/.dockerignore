@@ -1,0 +1,3 @@
+# Exclude locally vendored dependencies.
+vendor/
+.tmp
