@@ -35,3 +35,10 @@ Once docker is up and running and you have installed dependencies run:
 ```console
 make dev
 ```
+
+Below you will find a table with the `make` commands you can use in the project
+| Command | Description |
+|----------------------|--------------------------------------------------------------|
+| make dev | runs he project in development mode |
+| make install-dependencies | Install the dependencies of each microservice in the project |
+| make gen-proto | Generates .pb files from all .proto files in the project |
