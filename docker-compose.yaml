@@ -28,3 +28,26 @@ services:
       - DB_NAME=${PRODUCT_SERVICE_DB_NAME}
     volumes:
       - ./products-service/:/app/
+
+  graphql-service:
+    build:
+      context: ./graphql-service
+      dockerfile: Dockerfile
+    ports:
+      - "${GRAPHQL_SERVICE_PORT}:${GRAPHQL_SERVICE_PORT}"
+    environment:
+      - PORT=${GRAPHQL_SERVICE_PORT}
+      - SOURCE_OF_TRUTH=${GRAPHQL_SERVICE_SOURCE_OF_TRUTH}
+    volumes:
+      - ./graphql-service/:/app/
+
+  frontend-service:
+    build: 
+      context: ./frontend-service
+      dockerfile: Dockerfile
+    ports:
+      - "${FRONTEND_SERVICE_PORT}:${FRONTEND_SERVICE_PORT}"
+    environment:
+      - PORT=${FRONTEND_SERVICE_PORT}
+    volumes:
+      - ./frontend-service/:/app/
