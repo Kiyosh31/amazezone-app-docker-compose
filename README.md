@@ -15,7 +15,7 @@ This is a personal project made to understand and create a microservices archite
 1. Clone the repo
 
 ```console
-https://github.com/Kiyosh31/rick-morty-app.git
+https://github.com/Kiyosh31/amazezone-app.git
 ```
 
 2. Create `.env` file with the values, there is an example on root project
