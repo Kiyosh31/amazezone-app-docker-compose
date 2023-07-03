@@ -4,7 +4,7 @@ package package.name;
 
 option go_package = "./products-service/proto";
 
-service ProductsService {
+service Products {
   rpc GetProduct(GetProductRequest) returns (ProductResponse);
 }
 
