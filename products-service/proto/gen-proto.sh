@@ -1,3 +1,5 @@
+#!/bin/bash
+
 rm -rf products/
 mkdir products/
 protoc --go_out=./products --go_opt=paths=source_relative \
