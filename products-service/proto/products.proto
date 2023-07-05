@@ -5,7 +5,7 @@ package package.name;
 option go_package = "./products-service/proto";
 
 service Products {
-  rpc GetProduct(GetProductRequest) returns (ProductResponse);
+  rpc GetProduct(GetProductRequest) returns (GetProductResponse);
 }
 
 message Product {
@@ -20,6 +20,6 @@ message GetProductRequest {
   string id = 1;
 }
 
-message ProductResponse {
+message GetProductResponse {
   Product product = 1;
 }

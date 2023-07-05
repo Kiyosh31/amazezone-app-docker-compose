@@ -7,10 +7,7 @@ services:
       - "${USER_SERVICE_PORT}:${USER_SERVICE_PORT}"
     environment:
       - PORT=${USER_SERVICE_PORT}
-      - DB_USER=${USER_SERVICE_DB_USER}
-      - DB_PASSWORD=${USER_SERVICE_DB_PASSWORD}
-      - DB_CLUSTER=${USER_SERVICE_DB_CLUSTER}
-      - DB_NAME=${USER_SERVICE_DB_NAME}
+      - MONGO_URI=mongodb+srv://${USER_SERVICE_DB_USER}:${USER_SERVICE_DB_PASSWORD}@${USER_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${USER_SERVICE_DB_NAME}?retryWrites=true&w=majority
     volumes:
       - ./user-service/:/app/
 
@@ -22,10 +19,8 @@ services:
       - "${PRODUCTS_SERVICE_PORT}:${PRODUCTS_SERVICE_PORT}"
     environment:
       - PORT=${PRODUCTS_SERVICE_PORT}
-      - DB_USER=${PRODUCT_SERVICE_DB_USER}
-      - DB_PASSWORD=${PRODUCT_SERVICE_DB_PASSWORD}
-      - DB_CLUSTER=${PRODUCT_SERVICE_DB_CLUSTER}
-      - DB_NAME=${PRODUCT_SERVICE_DB_NAME}
+      - GRPC_PORT=${PRODUCTS_SERVICE_GRPC_PORT}
+      - MONGO_URI=mongodb+srv://${PRODUCT_SERVICE_DB_USER}:${PRODUCT_SERVICE_DB_PASSWORD}@${PRODUCT_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${PRODUCT_SERVICE_DB_NAME}?retryWrites=true&w=majority
     volumes:
       - ./products-service/:/app/
 

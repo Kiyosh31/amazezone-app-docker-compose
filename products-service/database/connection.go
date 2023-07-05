@@ -11,7 +11,7 @@ import (
 )
 
 func ConnectToDB() {
-	uri := "mongodb+srv://" + os.Getenv("DB_USER") + ":" + os.Getenv("DB_PASSWORD") + "@" + os.Getenv("DB_CLUSTER") + ".dvnme.mongodb.net/" + os.Getenv("DB_NAME") + "?retryWrites=true&w=majority"
+	uri := os.Getenv("MONGO_URI")
 
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(uri).SetServerAPIOptions(serverAPI)
@@ -31,7 +31,7 @@ func ConnectToDB() {
 	// Send a ping to confirm a successful connection
 	var result bson.M
 
-	if err := client.Database("admin").RunCommand(context.TODO(), bson.D{{"ping", 1}}).Decode(&result); err != nil {
+	if err := client.Database("rick-morty-app").RunCommand(context.TODO(), bson.D{{"ping", 1}}).Decode(&result); err != nil {
 		panic(err)
 	}
 

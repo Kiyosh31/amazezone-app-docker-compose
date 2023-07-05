@@ -1,16 +1,11 @@
 package main
 
 import (
-	"log"
-	"net"
 	"os"
-
-	pb "products-service/proto/products"
-
-	"google.golang.org/grpc"
+	"products-service/database"
 )
 
-func getPort() string {
+func getServicePort() string {
 	port := ":" + os.Getenv("PORT")
 
 	if port == "" {
@@ -21,19 +16,13 @@ func getPort() string {
 }
 
 func main() {
-	port := getPort()
-	lis, err := net.Listen("tcp", port)
-	if err != nil {
-		log.Fatalf("Failed to listen in port: %s", port)
-	}
+	// port := getServicePort()
+	// list, err := net.Listen("tcp", port)
+	// log.Printf("Server listening")
+	// if err != nil {
+	// 	log.Fatalf("Products-service could not serve: %s", err)
+	// }
 
-	var opts []grpc.ServerOption
-	grpcServer := grpc.NewServer(opts...)
-
-	pb.RegisterProductsServer(grpcServer)
-
-	err = grpcServer.Serve(lis)
-	if err != nil {
-		log.Fatalf("gRPC server could not start: %s", err)
-	}
+	// gRPC.StartServer()
+	database.ConnectToDB()
 }
