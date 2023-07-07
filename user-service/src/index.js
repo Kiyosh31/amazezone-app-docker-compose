@@ -1,7 +1,7 @@
 import express from 'express'
 import './database/index.js'
 import { rootRouter } from './routes/index.js'
-import logger from './utils/logger.js'
+import { logger } from './utils/logger.js'
 
 const app = express()
 app.use(express.json())

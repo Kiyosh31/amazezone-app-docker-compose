@@ -1,5 +1,5 @@
 import winston from 'winston'
-import Transports from 'winston-mongodb'
+import 'winston-mongodb'
 
 const levels = {
   error: 0,
@@ -26,18 +26,16 @@ const colors = {
 winston.addColors(colors)
 
 const format = winston.format.combine(
-  winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
+  winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.colorize({ all: true }),
-  winston.format.printf(({ timestamp, level, message, status, payload }) => {
-    // `${timestamp} ${level}: ${message}`
-
+  winston.format.printf(({ timestamp, level, message, status, data }) => {
     let infoLog = `${timestamp} ${level}: ${message}`
     if (status) {
-      infoLog += `| ${status}`
+      infoLog += ` | ${status}`
     }
 
-    if (payload) {
-      infoLog += `| response: ${payload}`
+    if (data) {
+      infoLog += ` | data: ${data}`
     }
 
     return infoLog
@@ -51,14 +49,15 @@ const transports = [
     level: 'error'
   }),
   new winston.transports.File({ filename: 'logs/all.log' }),
-  new Transports.MongoDB({
+  new winston.transports.MongoDB({
     level: level,
     db: process.env.MONGO_URI,
     dbName: process.env.DB_NAME,
     collection: process.env.DB_LOGGER_COLLECTION,
     options: {
       useUnifiedTopology: true
-    }
+    },
+    decolorize: true
   })
 ]
 
@@ -69,4 +68,6 @@ const logger = winston.createLogger({
   transports
 })
 
-export default logger
+const objectFormatter = (data) => JSON.stringify(data)
+
+export { logger, objectFormatter }
