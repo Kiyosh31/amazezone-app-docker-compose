@@ -6,8 +6,11 @@ services:
     ports:
       - "${USER_SERVICE_PORT}:${USER_SERVICE_PORT}"
     environment:
+      - LEVEL=${APP_LEVEL}
       - PORT=${USER_SERVICE_PORT}
       - MONGO_URI=mongodb+srv://${USER_SERVICE_DB_USER}:${USER_SERVICE_DB_PASSWORD}@${USER_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${USER_SERVICE_DB_NAME}?retryWrites=true&w=majority
+      - DB_NAME=${USER_SERVICE_DB_NAME}
+      - DB_LOGGER_COLLECTION=${USER_SERVICE_DB_LOGGER_COLLECTION}
     volumes:
       - ./user-service/:/app/
 

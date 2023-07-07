@@ -10,8 +10,9 @@ package gRPC
 // 	"google.golang.org/grpc"
 // )
 
-// func Client() {
+// func StartGrpcClient() (*pb.NewProductsClient, error) {
 // 	port := getGrpcPort()
+
 // 	conn, err := grpc.Dial(port, grpc.WithInsecure(), grpc.WithBlock())
 // 	if err != nil {
 // 		log.Fatalf("Client could not serve: %s", err)
@@ -22,4 +23,6 @@ package gRPC
 
 // 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 // 	defer cancel()
+
+// 	return client, nil
 // }

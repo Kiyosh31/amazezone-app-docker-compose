@@ -7,5 +7,5 @@ delete-docker:
 install-dependencies:
 	./install-dependencies.sh
 
-gen-proto:
+proto:
 	./gen-protos.sh

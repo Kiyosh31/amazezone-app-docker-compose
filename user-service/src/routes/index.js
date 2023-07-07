@@ -10,8 +10,8 @@ import {
 const router = express.Router()
 
 // User routes
-router.route('/user').get(getAllUsers)
-router.route('/user/:name').get(getUser)
-router.route('/user').post(postUser).patch(updateUser).delete(deleteUser)
+router.route('/users').get(getAllUsers)
+router.route('/users/:id').get(getUser).patch(updateUser).delete(deleteUser)
+router.route('/users').post(postUser)
 
 export { router as rootRouter }

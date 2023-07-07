@@ -37,8 +37,9 @@ func (s *ProductsServer) GetProducts(ctx context.Context, in *pb.GetProductReque
 	}, nil
 }
 
-func StartServer() {
+func StartGrpcServer() {
 	port := getGrpcPort()
+
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("Failed to listen in port: %s", port)
@@ -49,6 +50,7 @@ func StartServer() {
 
 	pb.RegisterProductsServer(grpcServer, ProductsServer{})
 	log.Printf("gRPC server listening at: %s", lis.Addr())
+
 	if err = grpcServer.Serve(lis); err != nil {
 		log.Fatalf("Failed to serve gRPC: %s", err)
 	}
