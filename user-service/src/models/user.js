@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import Password from '../utils/password.js'
 
 const UserSchema = new mongoose.Schema({
   username: {
@@ -16,6 +17,15 @@ const UserSchema = new mongoose.Schema({
     required: true,
     minlegnth: 5
   }
+})
+
+UserSchema.pre('save', async function (done) {
+  if (this.isModified('password')) {
+    const hashed = await Password.toHash(this.get('password'))
+    this.set('password', hashed)
+  }
+
+  done()
 })
 
 const User = mongoose.model('User', UserSchema)

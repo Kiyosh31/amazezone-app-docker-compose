@@ -10,7 +10,7 @@ const levels = {
 }
 
 const level = () => {
-  const env = process.env.LEVEL || 'development'
+  const env = process.env.ENVIRONMENT || 'development'
   const isDevelopment = env === 'development'
   return isDevelopment ? 'debug' : 'warn'
 }

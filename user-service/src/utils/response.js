@@ -9,9 +9,9 @@ export default class StandardResponse {
     this.data = data
   }
 
-  success(data) {
+  success({ message = null, data = null }) {
     this.code = 200
-    this.message = 'Success'
+    this.message = message || 'Success'
     this.data = data
   }
 
@@ -25,5 +25,11 @@ export default class StandardResponse {
     this.code = 200
     this.message = 'User deleted successfully'
     this.data = null
+  }
+
+  error(mesage, data = null) {
+    this.code = 400
+    this.message = mesage
+    this.data = data
   }
 }
