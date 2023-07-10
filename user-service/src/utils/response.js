@@ -27,9 +27,9 @@ export default class StandardResponse {
     this.data = null
   }
 
-  error(mesage, data = null) {
+  error({ message = '', data = null }) {
     this.code = 400
-    this.message = mesage
+    this.message = message
     this.data = data
   }
 }

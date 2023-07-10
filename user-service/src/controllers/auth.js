@@ -1,7 +1,10 @@
 import User from '../models/user.js'
 import { logger } from '../utils/logger.js'
+import Password from '../utils/password.js'
 import StandardResponse from '../utils/response.js'
 import jwt from 'jsonwebtoken'
+import { errorHandler } from '../middlewares/errorHandler.js'
+import { fatalErrorHandler } from '../middlewares/fatalErrorHandler.js'
 
 const secret = process.env.SECRET
 
@@ -11,20 +14,29 @@ const getToken = async (req, res) => {
   })
 
   try {
+    const response = new StandardResponse()
+
     logger.http({
       message: 'auth searching user'
     })
 
-    const response = new StandardResponse()
     const findedUser = await User.findOne({ email: req.body.email })
 
     if (!findedUser) {
-      logger.error({
-        message: 'user not found!'
+      errorHandler({ err: 'user not found', req, res })
+    }
+
+    const passwordMatch = await Password.compare(
+      findedUser.password,
+      req.body.password
+    )
+
+    if (passwordMatch) {
+      console.log('🚀 ~ entro')
+      logger.http({
+        message: 'credentials match, creating token'
       })
 
-      response.notFound('user')
-    } else {
       const token = jwt.sign(
         {
           sub: findedUser.email,
@@ -34,14 +46,19 @@ const getToken = async (req, res) => {
         secret
       )
 
-      response.created(token)
+      const fullToken = `Bearer ${token}`
+
+      logger.http({
+        message: `Token created successfully with value: ${fullToken}`
+      })
+
+      response.created(fullToken)
+      res.send(response)
     }
 
-    res.send(response)
+    errorHandler({ err: 'credentials are not valid', req, res })
   } catch (err) {
-    logger.error({
-      message: `auth: ${err.message}`
-    })
+    fatalErrorHandler({ prefix: 'auth', err: err.message })
   }
 }
 
