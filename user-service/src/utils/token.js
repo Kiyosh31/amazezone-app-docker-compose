@@ -2,17 +2,23 @@ import jwt from 'jsonwebtoken'
 
 const secret = process.env.SECRET
 
-const validateToken = (req) => {
-  if (!req.headers.authorization) return false
+const isTokenValid = (bearerToken) => {
+  const tokenValue = bearerToken.split(' ')[1]
+  return jwt.verify(tokenValue, secret, (err, data) => {
+    if (err) {
+      return {
+        err: true,
+        data: err
+      }
+    }
 
-  const token = req.headers.authorization.split(' ')[1]
-  const payload = jwt.verify(token, secret)
-
-  if (Date.now() > token.exp) {
-    return false
-  }
-
-  return true
+    if (data) {
+      return {
+        err: false,
+        data: data
+      }
+    }
+  })
 }
 
-export { validateToken }
+export { secret, isTokenValid }

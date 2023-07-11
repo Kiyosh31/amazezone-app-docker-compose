@@ -28,18 +28,9 @@ winston.addColors(colors)
 const format = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.colorize({ all: true }),
-  winston.format.printf(({ timestamp, level, message, status, data }) => {
-    let infoLog = `${timestamp} ${level}: ${message}`
-    if (status) {
-      infoLog += ` | ${status}`
-    }
-
-    if (data) {
-      infoLog += ` | data: ${data}`
-    }
-
-    return infoLog
-  })
+  winston.format.printf(
+    ({ timestamp, level, message }) => `[${timestamp}] [${level}]: ${message}`
+  )
 )
 
 const transports = [
@@ -50,14 +41,15 @@ const transports = [
   }),
   new winston.transports.File({ filename: 'logs/all.log' }),
   new winston.transports.MongoDB({
-    level: level,
+    level: 'http',
     db: process.env.MONGO_URI,
     dbName: process.env.DB_NAME,
     collection: process.env.DB_LOGGER_COLLECTION,
     options: {
       useUnifiedTopology: true
     },
-    decolorize: true
+    decolorize: true,
+    metaKey: 'metadata'
   })
 ]
 

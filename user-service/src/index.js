@@ -10,7 +10,5 @@ app.use('/api', rootRouter)
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
-  logger.info({
-    message: `user-service listening on port ${port}`
-  })
+  logger.info(`user-service listening on port ${port}`)
 })
