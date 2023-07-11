@@ -29,7 +29,8 @@ const format = winston.format.combine(
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.colorize({ all: true }),
   winston.format.printf(
-    ({ timestamp, level, message }) => `[${timestamp}] [${level}]: ${message}`
+    ({ timestamp, level, prefix, message }) =>
+      `[${timestamp}] [${level}]: ${prefix ? `[${prefix}] =>` : ''} ${message}`
   )
 )
 
@@ -48,8 +49,7 @@ const transports = [
     options: {
       useUnifiedTopology: true
     },
-    decolorize: true,
-    metaKey: 'metadata'
+    decolorize: true
   })
 ]
 

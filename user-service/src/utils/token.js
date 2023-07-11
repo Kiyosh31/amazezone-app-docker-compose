@@ -2,6 +2,16 @@ import jwt from 'jsonwebtoken'
 
 const secret = process.env.SECRET
 
+const createToken = (id, email) => {
+  return jwt.sign(
+    {
+      id,
+      email
+    },
+    secret
+  )
+}
+
 const isTokenValid = (bearerToken) => {
   const tokenValue = bearerToken.split(' ')[1]
   return jwt.verify(tokenValue, secret, (err, data) => {
@@ -21,4 +31,4 @@ const isTokenValid = (bearerToken) => {
   })
 }
 
-export { secret, isTokenValid }
+export { secret, isTokenValid, createToken }
