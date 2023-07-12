@@ -12,6 +12,7 @@ import (
 
 func ConnectToDB() {
 	uri := os.Getenv("MONGO_URI")
+	db := os.Getenv("DB_NAME")
 
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
 	opts := options.Client().ApplyURI(uri).SetServerAPIOptions(serverAPI)
@@ -31,7 +32,7 @@ func ConnectToDB() {
 	// Send a ping to confirm a successful connection
 	var result bson.M
 
-	if err := client.Database("rick-morty-app").RunCommand(context.TODO(), bson.D{{"ping", 1}}).Decode(&result); err != nil {
+	if err := client.Database(db).RunCommand(context.TODO(), bson.D{{"ping", 1}}).Decode(&result); err != nil {
 		panic(err)
 	}
 

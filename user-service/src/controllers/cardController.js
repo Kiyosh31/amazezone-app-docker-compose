@@ -1,4 +1,4 @@
-import Card from '../database/models/cardModel.js'
+import Card from '../models/cardModel.js'
 import { logger, objectFormatter } from '../utils/logger.js'
 import { RESPONSE_TYPES } from '../utils/responseTypes.js'
 import { isTokenValid } from '../utils/token.js'

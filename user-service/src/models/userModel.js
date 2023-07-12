@@ -1,5 +1,5 @@
-import mongoose, { Types } from 'mongoose'
-import Password from '../../utils/password.js'
+import mongoose from 'mongoose'
+import Password from '../utils/password.js'
 
 const UserSchema = new mongoose.Schema(
   {

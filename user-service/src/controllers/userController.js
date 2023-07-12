@@ -1,4 +1,4 @@
-import User from '../database/models/userModel.js'
+import User from '../models/userModel.js'
 import { logger, objectFormatter } from '../utils/logger.js'
 import Password from '../utils/password.js'
 import { isTokenValid, createToken } from '../utils/token.js'

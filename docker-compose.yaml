@@ -23,20 +23,26 @@ services:
     restart: always
     depends_on:
       - redis-user-service
+    deploy:
+      replicas: 1
 
   products-service:
     build: 
       context: ./products-service
       dockerfile: Dockerfile
     ports:
-      - "${PRODUCTS_SERVICE_PORT}:${PRODUCTS_SERVICE_PORT}"
+      - "${PRODUCT_SERVICE_PORT}:${PRODUCT_SERVICE_PORT}"
     environment:
-      - PORT=${PRODUCTS_SERVICE_PORT}
+      - PORT=${PRODUCT_SERVICE_PORT}
       - GRPC_PORT=${PRODUCTS_SERVICE_GRPC_PORT}
       - MONGO_URI=mongodb+srv://${PRODUCT_SERVICE_DB_USER}:${PRODUCT_SERVICE_DB_PASSWORD}@${PRODUCT_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${PRODUCT_SERVICE_DB_NAME}?retryWrites=true&w=majority
+      - DB_NAME=${PRODUCT_SERVICE_DB_NAME}
+      - DB_LOGGER_COLLECTION=${PRODUCT_SERVICE_DB_LOGGER_COLLECTION}
     volumes:
       - ./products-service/:/app/
     restart: always
+    deploy:
+      replicas: 1
 
   graphql-service:
     build:
@@ -50,6 +56,8 @@ services:
     volumes:
       - ./graphql-service/:/app/
     restart: always
+    deploy:
+      replicas: 1
 
   frontend-service:
     build: 
@@ -62,3 +70,5 @@ services:
     volumes:
       - ./frontend-service/:/app/
     restart: always
+    deploy:
+      replicas: 1

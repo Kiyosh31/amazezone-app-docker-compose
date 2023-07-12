@@ -1,4 +1,4 @@
-import Address from '../database/models/addressModel.js'
+import Address from '../models/addressModel.js'
 import { logger, objectFormatter } from '../utils/logger.js'
 import { RESPONSE_TYPES } from '../utils/responseTypes.js'
 import { isTokenValid } from '../utils/token.js'

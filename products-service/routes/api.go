@@ -1,8 +1,18 @@
 package routes
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"products-service/controllers"
+
+	"github.com/gofiber/fiber/v2"
+)
 
 func RegisterRoutes(app *fiber.App) {
 	api := app.Group("/api")
-	// api.Get("/products")
+
+	products := api.Group("/products")
+	products.Get("", controllers.GetProduct)
+	products.Post("", controllers.CreateProduct)
+	products.Put("", controllers.UpdateProduct)
+	products.Delete("", controllers.DeleteProduct)
+
 }

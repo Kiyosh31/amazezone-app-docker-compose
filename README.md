@@ -44,3 +44,15 @@ Below you will find a table with the `make` commands you can use in the project
 | make delete-docker | deletes all images, instances and containers in docker to have a fresh start |
 | make install-dependencies | Install the dependencies of each microservice in the project |
 | make gen-proto | Generates .pb files from all .proto files in the project |
+
+# Recommended tools
+
+To develop tis project I use vscode with several plugins to make it work properly
+
+1. [VS Code](https://code.visualstudio.com/)
+2. VScode extensions:
+
+- Eslint
+- Error lens
+- Go
+- Prettier
