@@ -1,4 +1,9 @@
 services:
+  redis-user-service:
+    image: redis:alpine
+    ports:
+      - "${REDIS_USER_SERVICE_PORT}:${REDIS_USER_SERVICE_PORT}"
+
   user-service:
     build:
       context: ./user-service
@@ -11,9 +16,13 @@ services:
       - MONGO_URI=mongodb+srv://${USER_SERVICE_DB_USER}:${USER_SERVICE_DB_PASSWORD}@${USER_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${USER_SERVICE_DB_NAME}?retryWrites=true&w=majority
       - DB_NAME=${USER_SERVICE_DB_NAME}
       - DB_LOGGER_COLLECTION=${USER_SERVICE_DB_LOGGER_COLLECTION}
-      - SECRET=${USER_SERVICE_JWT_SECRET}
+      - JWT_SECRET=${USER_SERVICE_JWT_SECRET}
+      - REDIS_URI=redis://redis-user-service:${REDIS_USER_SERVICE_PORT}
     volumes:
       - ./user-service/:/app/
+    restart: always
+    depends_on:
+      - redis-user-service
 
   products-service:
     build: 
@@ -27,6 +36,7 @@ services:
       - MONGO_URI=mongodb+srv://${PRODUCT_SERVICE_DB_USER}:${PRODUCT_SERVICE_DB_PASSWORD}@${PRODUCT_SERVICE_DB_CLUSTER}.dvnme.mongodb.net/${PRODUCT_SERVICE_DB_NAME}?retryWrites=true&w=majority
     volumes:
       - ./products-service/:/app/
+    restart: always
 
   graphql-service:
     build:
@@ -39,6 +49,7 @@ services:
       - SOURCE_OF_TRUTH=${GRAPHQL_SERVICE_SOURCE_OF_TRUTH}
     volumes:
       - ./graphql-service/:/app/
+    restart: always
 
   frontend-service:
     build: 
@@ -50,3 +61,4 @@ services:
       - PORT=${FRONTEND_SERVICE_PORT}
     volumes:
       - ./frontend-service/:/app/
+    restart: always

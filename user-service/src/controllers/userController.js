@@ -3,6 +3,10 @@ import { logger, objectFormatter } from '../utils/logger.js'
 import Password from '../utils/password.js'
 import { isTokenValid, createToken } from '../utils/token.js'
 import { RESPONSE_TYPES } from '../utils/responseTypes.js'
+import { transformJSONToRedis, transformRedisToJSON } from '../utils/redis.js'
+import { ROLES } from '../utils/role.js'
+import { redisClient } from '../index.js'
+import mongoose from 'mongoose'
 
 const getUser = async (req, res) => {
   const prefix = 'getUser'
@@ -24,22 +28,64 @@ const getUser = async (req, res) => {
       message: `Valid token: ${objectFormatter(validatedToken.data)}`
     })
 
-    const findedUser = await User.findOne({ _id: id })
-
-    if (!findedUser) {
-      logger.error({ prefix, message: RESPONSE_TYPES.USER_NOT_FOUND })
-      return res.status(400).send({ errors: RESPONSE_TYPES.USER_NOT_FOUND })
-    }
-
     logger.http({
       prefix,
-      message: `${RESPONSE_TYPES.USER_FOUND} ${findedUser}`
+      message: 'Searching for user'
+    })
+
+    // const redisFindedUser = await redisClient.get(`user?id=${id}`)
+
+    // if (redisFindedUser) {
+    //   logger.http({
+    //     prefix,
+    //     message: `${RESPONSE_TYPES.USER_FOUND_IN_REDIS} ${redisFindedUser}`
+    //   })
+    //   logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
+
+    //   res.json(transformRedisToJSON(redisFindedUser))
+    // } else {
+    const mongoFindedUser = await User.aggregate([
+      {
+        $match: { _id: new mongoose.Types.ObjectId(id) }
+      },
+      {
+        $lookup: {
+          from: 'cards',
+          localField: '_id',
+          foreignField: 'userId',
+          as: 'cards'
+        }
+      },
+      {
+        $lookup: {
+          from: 'addresses',
+          localField: '_id',
+          foreignField: 'userId',
+          as: 'addresses'
+        }
+      }
+    ])
+
+    if (!mongoFindedUser) {
+      logger.error({ prefix, message: RESPONSE_TYPES.USER_NOT_FOUND })
+      return res.status(400).json({ errors: RESPONSE_TYPES.USER_NOT_FOUND })
+    }
+
+    // await redisClient.set(
+    //   `user?id=${id}`,
+    //   transformJSONToRedis(mongoFindedUser)
+    // )
+    logger.http({
+      prefix,
+      message: `${RESPONSE_TYPES.USER_FOUND_IN_DB} ${objectFormatter(
+        mongoFindedUser
+      )}`
     })
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
-
-    res.send(findedUser)
+    res.json(mongoFindedUser)
+    // }
   } catch (err) {
-    logger.error(err.message)
+    logger.error({ prefix, message: err.message })
   }
 }
 
@@ -49,18 +95,45 @@ const getAllUsers = async (req, res) => {
   try {
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_INCOMING })
 
-    const allUsers = await User.find({})
-    logger.http({ prefix, message: 'Retrieving al users from db' })
+    const validatedToken = isTokenValid(req.headers.authorization)
+    if (validatedToken.err) {
+      logger.error({ prefix, message: validatedToken.data })
+      return res.status(400).send({ errors: validatedToken.data })
+    }
+    logger.http({
+      prefix,
+      message: `Valid token: ${objectFormatter(validatedToken.data)}`
+    })
 
-    if (!allUsers) {
+    const usersInRedis = await redisClient.get('allUsers')
+
+    logger.http({ prefix, message: 'Searching for all users' })
+    // if (usersInRedis) {
+    //   logger.http({
+    //     prefix,
+    //     message: `${RESPONSE_TYPES.USER_FOUND_IN_REDIS} ${usersInRedis}`
+    //   })
+    //   logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
+
+    //   res.json(transformRedisToJSON(usersInRedis))
+    // } else {
+    const usersInMongo = await User.find({})
+
+    if (!usersInMongo) {
       logger.error({ prefix, message: RESPONSE_TYPES.THERE_ARE_NO_USERS })
       return res.status(400).send({ errors: RESPONSE_TYPES.THERE_ARE_NO_USERS })
     }
 
-    logger.http({ prefix, message: `retrieved all users: ${allUsers}` })
+    await redisClient.set(`allUsers`, transformJSONToRedis(usersInMongo))
+
+    logger.http({
+      prefix,
+      message: `${RESPONSE_TYPES.USER_FOUND_IN_DB} ${usersInMongo}`
+    })
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
 
-    res.send(allUsers)
+    res.json(usersInMongo)
+    // }
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }
@@ -80,7 +153,7 @@ const createUser = async (req, res) => {
         .send({ errors: RESPONSE_TYPES.USER_ALREADY_EXISTS })
     }
 
-    const newUser = new User({ ...req.body })
+    const newUser = new User({ ...req.body, role: ROLES.USER })
     logger.http({
       prefix,
       message: `Creating user with body: ${objectFormatter(req.body)}`
@@ -88,9 +161,9 @@ const createUser = async (req, res) => {
     await newUser.save()
 
     logger.http({ prefix, message: `user created successfully: ${newUser}` })
-    logger.http({ prefix, message: 'finished request...' })
+    logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
 
-    res.send(newUser)
+    res.json(newUser)
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }
@@ -106,7 +179,8 @@ const updateUser = async (req, res) => {
 
     const findedUser = await User.findOne({ _id: id })
     if (!findedUser) {
-      logger.error(RESPONSE_TYPES.USER_NOT_FOUND)
+      logger.error({ prefix, message: RESPONSE_TYPES.USER_NOT_FOUND })
+      return res.status(400).json({ errors: RESPONSE_TYPES.USER_NOT_FOUND })
     }
 
     logger.http({
@@ -122,7 +196,7 @@ const updateUser = async (req, res) => {
     logger.http({ prefix, message: `user updated successfully` })
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
 
-    res.send(findedUser)
+    res.json(findedUser)
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }
@@ -140,7 +214,7 @@ const deleteUser = async (req, res) => {
     logger.http({ prefix, message: 'user deleted successfully' })
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
 
-    res.send('user deleted successfully')
+    res.json({ message: 'user deleted successfully' })
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }
@@ -173,7 +247,11 @@ const signinUser = async (req, res) => {
         .status(400)
         .send({ errors: RESPONSE_TYPES.INVALID_CREDENTIALS })
     }
-    const token = createToken(existingUser.id, existingUser.email)
+    const token = createToken(
+      existingUser.id,
+      existingUser.email,
+      existingUser.role
+    )
     if (!token) {
       logger.error({ prefix, message: RESPONSE_TYPES.TOKEN_NOT_CREATED })
       return res.status(400).send({ errors: RESPONSE_TYPES.TOKEN_NOT_CREATED })

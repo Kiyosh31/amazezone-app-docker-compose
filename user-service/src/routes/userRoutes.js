@@ -10,7 +10,7 @@ import {
 import {
   createUserMiddleware,
   deleteUserMiddleware,
-  getSingleUserMiddleware,
+  tokenMiddleware,
   signinUserMiddleware,
   updateUserMiddleware
 } from '../middlewares/userMiddlewares.js'
@@ -18,8 +18,8 @@ import { validateRequest } from '../middlewares/validateRequest.js'
 
 const router = express.Router()
 
-router.get('', getAllUsers)
-router.get('/:id', getSingleUserMiddleware, validateRequest, getUser)
+router.get('', tokenMiddleware, validateRequest, getAllUsers)
+router.get('/:id', tokenMiddleware, validateRequest, getUser)
 router.post('', createUserMiddleware, validateRequest, createUser)
 router.put('/:id', updateUserMiddleware, validateRequest, updateUser)
 router.delete('/:id', deleteUserMiddleware, validateRequest, deleteUser)

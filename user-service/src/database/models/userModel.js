@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { Types } from 'mongoose'
 import Password from '../../utils/password.js'
 
 const UserSchema = new mongoose.Schema(
@@ -17,6 +17,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlegnth: 5
+    },
+    role: {
+      type: String,
+      required: true
     }
   },
   {

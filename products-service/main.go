@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	"products-service/gRPC"
 	"products-service/routes"
 
 	"github.com/gofiber/fiber/v2"
@@ -26,7 +25,7 @@ func main() {
 
 	app.Listen(port)
 
-	go gRPC.StartGrpcServer()
+	// go gRPC.StartGrpcServer()
 	// go gRPC.StartGrpcClient()
 
 	// port := getServicePort()

@@ -1,12 +1,14 @@
 import jwt from 'jsonwebtoken'
 
-const secret = process.env.SECRET
+const secret = process.env.JWT_SECRET
 
-const createToken = (id, email) => {
+const createToken = (id, email, role) => {
   return jwt.sign(
     {
       id,
-      email
+      email,
+      role,
+      exp: Math.floor(Date.now() / 1000) + 60 * 60
     },
     secret
   )

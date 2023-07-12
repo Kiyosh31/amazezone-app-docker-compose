@@ -1,6 +1,6 @@
 import { body, param, header } from 'express-validator'
 
-const getSingleUserMiddleware = [
+const tokenMiddleware = [
   header('Authorization').notEmpty().withMessage('You must provide a token')
 ]
 
@@ -29,5 +29,5 @@ export {
   updateUserMiddleware,
   deleteUserMiddleware,
   signinUserMiddleware,
-  getSingleUserMiddleware
+  tokenMiddleware
 }

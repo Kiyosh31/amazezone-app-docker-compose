@@ -9,6 +9,7 @@ This is a personal project made to understand and create a microservices archite
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 2. [Docker Compose](https://docs.docker.com/compose/)
 3. Being able to run Makefiles
+4. Node.js ^18.16.1
 
 ## Installation
 
