@@ -1,7 +1,7 @@
 import express from 'express'
 import { userRouter } from './userRoutes.js'
-import { cardRouter } from './cardRouters.js'
-import { addressRouter } from './addressRouter.js'
+import { cardRouter } from './cardRoutes.js'
+import { addressRouter } from './addressRoutes.js'
 
 const router = express.Router()
 
