@@ -6,7 +6,6 @@ import { addressRouter } from './addressRoutes.js'
 const router = express.Router()
 
 router.use('/users', userRouter)
-
 router.use('/address', addressRouter)
 router.use('/card', cardRouter)
 

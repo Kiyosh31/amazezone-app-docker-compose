@@ -10,19 +10,31 @@ import {
 import {
   createUserMiddleware,
   deleteUserMiddleware,
-  tokenMiddleware,
   signinUserMiddleware,
   updateUserMiddleware
 } from '../middlewares/userMiddlewares.js'
 import { validateRequest } from '../middlewares/validateRequest.js'
+import { tokenValidatorMiddleware } from '../middlewares/tokenValidatorMiddleware.js'
 
 const router = express.Router()
 
-router.get('', tokenMiddleware, validateRequest, getAllUsers)
-router.get('/:id', tokenMiddleware, validateRequest, getUser)
+router.get('', tokenValidatorMiddleware, validateRequest, getAllUsers)
+router.get('/:id', tokenValidatorMiddleware, validateRequest, getUser)
 router.post('', createUserMiddleware, validateRequest, createUser)
-router.put('/:id', updateUserMiddleware, validateRequest, updateUser)
-router.delete('/:id', deleteUserMiddleware, validateRequest, deleteUser)
+router.put(
+  '/:id',
+  tokenValidatorMiddleware,
+  updateUserMiddleware,
+  validateRequest,
+  updateUser
+)
+router.delete(
+  '/:id',
+  tokenValidatorMiddleware,
+  deleteUserMiddleware,
+  validateRequest,
+  deleteUser
+)
 router.post('/signin', signinUserMiddleware, validateRequest, signinUser)
 
 export { router as userRouter }

@@ -18,16 +18,6 @@ const getUser = async (req, res) => {
 
     logger.http({ prefix, message: `Searching user with id: ${id}` })
 
-    const validatedToken = isTokenValid(req.headers.authorization)
-    if (validatedToken.err) {
-      logger.error({ prefix, message: validatedToken.data })
-      return res.status(400).send({ errors: validatedToken.data })
-    }
-    logger.http({
-      prefix,
-      message: `Valid token: ${objectFormatter(validatedToken.data)}`
-    })
-
     logger.http({
       prefix,
       message: 'Searching for user'
@@ -214,7 +204,7 @@ const deleteUser = async (req, res) => {
     logger.http({ prefix, message: 'user deleted successfully' })
     logger.http({ prefix, message: RESPONSE_TYPES.REQUEST_FINISHED })
 
-    res.json({ message: 'user deleted successfully' })
+    res.json({ message: 'User deleted successfully' })
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }
@@ -257,7 +247,7 @@ const signinUser = async (req, res) => {
       return res.status(400).send({ errors: RESPONSE_TYPES.TOKEN_NOT_CREATED })
     }
 
-    res.status(201).send({ token: `Bearer ${token}` })
+    res.status(201).send({ token })
   } catch (err) {
     logger.error({ prefix, message: err.message })
   }

@@ -9,7 +9,9 @@ const RESPONSE_TYPES = {
   REQUEST_FINISHED: 'Request finished...',
   TOKEN_NOT_CREATED: 'Error creating token',
   EXISTING_CARD: 'Card already exists',
-  EXISTING_ADDRESS: 'Address already exists'
+  CARD_NOT_FOUND: 'Card not found',
+  EXISTING_ADDRESS: 'Address already exists',
+  ADDRESS_NOT_FOUND: 'Address not found'
 }
 
 export { RESPONSE_TYPES }
