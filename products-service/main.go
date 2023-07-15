@@ -52,7 +52,11 @@ func main() {
 	routes.RegisterRoutes(app)
 
 	app.Listen(port)
-	database.ConnectToDB()
+	err = database.ConnectMongoDB()
+	if err != nil {
+		panic(err)
+	}
+	defer database.CloseMongoDB()
 
 	// go gRPC.StartGrpcServer()
 	// go gRPC.StartGrpcClient()

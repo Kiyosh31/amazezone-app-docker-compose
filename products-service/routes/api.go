@@ -9,10 +9,11 @@ import (
 func RegisterRoutes(app *fiber.App) {
 	api := app.Group("/api")
 
-	products := api.Group("/products")
-	products.Get("", controllers.GetProduct)
-	products.Post("", controllers.CreateProduct)
-	products.Put("", controllers.UpdateProduct)
-	products.Delete("", controllers.DeleteProduct)
+	productsApi := api.Group("/products")
+	productsApi.Get("/", controllers.GetAllProducts)
+	productsApi.Get("/:id", controllers.GetProduct)
+	productsApi.Post("", controllers.CreateProduct)
+	productsApi.Put("/:id", controllers.UpdateProduct)
+	productsApi.Delete("/:id", controllers.DeleteProduct)
 
 }
