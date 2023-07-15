@@ -1,4 +1,1 @@
-# Exclude locally vendored dependencies.
-vendor/
-tmp/
-logs/
+tmp

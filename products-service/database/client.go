@@ -2,6 +2,7 @@ package database
 
 import (
 	"context"
+	"log"
 	"os"
 
 	"go.mongodb.org/mongo-driver/mongo"
@@ -10,11 +11,11 @@ import (
 
 var MongoClient *mongo.Client
 
-func ConnectMongoDB() error {
+func ConnectToDB() error {
 	uri := os.Getenv("MONGO_URI")
+
 	if uri == "" {
-		panic("")
-		// log the env var must be here
+		log.Fatal("You must provide MONGO_URI in env")
 	}
 
 	var err error
@@ -26,7 +27,7 @@ func ConnectMongoDB() error {
 	return nil
 }
 
-func CloseMongoDB() {
+func DisconnectOfDB() {
 	err := MongoClient.Disconnect(context.TODO())
 	if err != nil {
 		panic(err)
@@ -34,5 +35,14 @@ func CloseMongoDB() {
 }
 
 func GetCollection() *mongo.Collection {
-	return MongoClient.Database(os.Getenv("DB_NAME")).Collection(os.Getenv("DB_COLLECTION"))
+	db := os.Getenv("DB_NAME")
+	col := os.Getenv("DB_COLLECTION")
+	if db == "" {
+		panic("DB_NAME is missing in env")
+	}
+	if col == "" {
+		panic("DB_COLLECTION is missing in env")
+	}
+
+	return MongoClient.Database(db).Collection(col)
 }
