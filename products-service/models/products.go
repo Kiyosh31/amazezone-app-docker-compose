@@ -1,16 +1,20 @@
 package models
 
+import "go.mongodb.org/mongo-driver/bson/primitive"
+
 type ProductComments struct {
-	UserName   string  `json:"userName" bson:"userName"`
-	Comment    string  `json:"comment" bson:"comment"`
-	RatingStar float64 `json:"ratingStar" bson:"ratingStar"`
+	ID         primitive.ObjectID `bson:"_id,omitempty"`
+	ProductId  primitive.ObjectID `bson:"productId"`
+	UserName   string             `bson:"userName"`
+	Comment    string             `bson:"comment"`
+	RatingStar float64            `bson:"ratingStar"`
 }
 
 type Product struct {
-	Name        string            `json:"name" bson:"name"`
-	Description string            `json:"description" bson:"description"`
-	Price       float64           `json:"price" bson:"price"`
-	Brand       string            `json:"brand" bson:"brand"`
-	Stars       float64           `json:"stars" bson:"stars"`
-	Comments    []ProductComments `json:"productComments" bson:"productComments"`
+	ID          primitive.ObjectID `bson:"_id,omitempty"`
+	Name        string             `bson:"name"`
+	Description string             `bson:"description"`
+	Price       float64            `bson:"price"`
+	Brand       string             `bson:"brand"`
+	Stars       float64            `bson:"stars"`
 }

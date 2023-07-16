@@ -10,6 +10,10 @@ func RegisterRoutes(app *fiber.App) {
 	api := app.Group("/api")
 
 	// Product Routes
-	products := api.Group("/products")
-	products.Post("", controllers.CreateProduct)
+	productGroup := api.Group("/products")
+	productGroup.Post("", controllers.CreateProduct)
+	productGroup.Get("/", controllers.GetAllProducts)
+	productGroup.Get("/:id", controllers.GetProduct)
+	productGroup.Put("/:id", controllers.UpdateProduct)
+	productGroup.Delete("/:id", controllers.DeleteProject)
 }

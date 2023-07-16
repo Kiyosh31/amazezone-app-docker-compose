@@ -10,6 +10,7 @@ This is a personal project made to understand and create a microservices archite
 2. [Docker Compose](https://docs.docker.com/compose/)
 3. Being able to run Makefiles
 4. Node.js ^18.16.1
+5. Go 1.18
 
 ## Installation
 
