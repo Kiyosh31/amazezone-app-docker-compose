@@ -3,11 +3,11 @@
 # Node dependencies
 cd user-service/
 npm i
-cd graphql-service/
+cd ../graphql-service/
 npm i
-cd frontend-service/
+cd ../frontend-service/
 npm i
 
 # Go dependencies
-cd products-service
+cd ../products-service/
 go mod download

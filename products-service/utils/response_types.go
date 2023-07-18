@@ -1,9 +1,10 @@
 package utils
 
-import "github.com/gofiber/fiber"
+import "github.com/gin-gonic/gin"
 
-func ErrorMap(err error) *fiber.Map {
-	return &fiber.Map{
-		"errors": err.Error(),
+func CreateErrorResponse(message string, err error) gin.H {
+	return gin.H{
+		"message": message,
+		"error":   err.Error(),
 	}
 }

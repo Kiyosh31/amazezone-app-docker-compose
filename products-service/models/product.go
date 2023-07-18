@@ -12,9 +12,9 @@ type ProductComments struct {
 
 type Product struct {
 	ID          primitive.ObjectID `bson:"_id,omitempty"`
-	Name        string             `bson:"name"`
-	Description string             `bson:"description"`
-	Price       float64            `bson:"price"`
-	Brand       string             `bson:"brand"`
-	Stars       float64            `bson:"stars"`
+	Name        string             `bson:"name" binding:"required"`
+	Description string             `bson:"description" binding:"required"`
+	Price       float64            `bson:"price" binding:"required"`
+	Brand       string             `bson:"brand" binding:"required"`
+	Stars       float64            `bson:"stars" binding:"required"`
 }
