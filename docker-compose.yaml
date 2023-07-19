@@ -3,6 +3,7 @@ services:
     image: redis:alpine
     ports:
       - "${REDIS_USER_SERVICE_PORT}:${REDIS_USER_SERVICE_PORT}"
+    restart: always
 
   user-service:
     build:
@@ -26,7 +27,14 @@ services:
     deploy:
       replicas: 1
 
-  products-service:
+  redis-product-service:
+      image: redis:alpine
+      command: --port ${REDIS_PRODUCT_SERVICE_PORT}
+      ports:
+        - "${REDIS_PRODUCT_SERVICE_PORT}:${REDIS_PRODUCT_SERVICE_PORT}"
+      restart: always
+
+  product-service:
     build: 
       context: ./products-service
       dockerfile: Dockerfile
@@ -38,11 +46,14 @@ services:
       - DB_NAME=${PRODUCT_SERVICE_DB_NAME}
       - DB_COLLECTION=${PRODUCT_SERVICE_DB_COLLECTION}
       - DB_LOGGER_COLLECTION=${PRODUCT_SERVICE_DB_LOGGER_COLLECTION}
+      - REDIS_URI=redis-product-service:${REDIS_PRODUCT_SERVICE_PORT}
     volumes:
       - ./products-service/:/app/
     restart: always
     deploy:
       replicas: 1
+    depends_on:
+      - redis-product-service
 
   graphql-service:
     build:

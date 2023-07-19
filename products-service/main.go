@@ -3,6 +3,7 @@ package main
 import (
 	"products-service/api"
 	"products-service/database"
+	rediscache "products-service/redis-cache"
 	"products-service/utils"
 
 	"github.com/gin-gonic/gin"
@@ -20,6 +21,8 @@ func main() {
 	if err != nil {
 		log.Panic(err)
 	}
+
+	rediscache.CreateRedisClient()
 
 	port := ":" + utils.GetEnvVar("PORT")
 	router.Run(port)
