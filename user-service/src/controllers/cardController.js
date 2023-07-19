@@ -57,7 +57,7 @@ const updateCard = async (req, res) => {
     }
 
     // check if the card belongs to te user
-    if (isCardMine(req.params.authorization, existingCard)) {
+    if (isCardMine(req.headers.authorization, existingCard)) {
       logger.error({
         prefix,
         message: "You don't have permission to update this card"

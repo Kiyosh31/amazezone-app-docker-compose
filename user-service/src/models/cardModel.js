@@ -17,7 +17,7 @@ const CardSchema = new mongoose.Schema({
   secretCode: {
     type: String,
     required: true,
-    minLength: 5
+    minLength: 3
   },
   expiration: {
     type: String,
