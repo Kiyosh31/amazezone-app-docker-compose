@@ -38,6 +38,8 @@ Once docker is up and running and you have installed dependencies run:
 make dev
 ```
 
+## Commands
+
 Below you will find a table with the `make` commands you can use in the project
 | Command | Description |
 |----------------------|--------------------------------------------------------------|
@@ -57,3 +59,7 @@ To develop tis project I use vscode with several plugins to make it work properl
 - Error lens
 - Go
 - Prettier
+
+# Wiki
+
+Don't forget to visit our [wiki to download and test postman collections and environments](https://github.com/Kiyosh31/amazezone-app/wiki)
