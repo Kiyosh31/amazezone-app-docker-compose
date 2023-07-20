@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "4c908296-3736-4cd3-a969-822afc14c2e4",
+		"name": "products-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"_postman_id": "d804bd00-9274-48f2-a985-05065bca7e3d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"prueba\",\n    \"description\": \"prueba\",\n    \"price\": 122,\n    \"brand\": \"prueba\",\n    \"stars\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product",
+			"_postman_id": "3be5e849-5359-4f9c-9bbc-6f52cfd6eae2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{BASE_URL}}/products/64b2066a44a2b70367584fb3"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"_postman_id": "1729b551-b24f-421b-a0ef-1550a59c50f2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{BASE_URL}}/products"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Product",
+			"_postman_id": "8b22dcc6-afc8-4c86-9be0-46f8b77ef232",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{BASE_URL}}/products/64b6c683b8981c876c9486dc"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"_postman_id": "92c2afba-b54c-44a0-bfab-c492b3653387",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jajajaja\",\n    \"description\": \"description2\",\n    \"price\": 140,\n    \"brand\": \"amazon\",\n    \"stars\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL}}/products/64b6c8f53da611db17ef7ef6"
+			},
+			"response": []
+		}
+	]
+}
