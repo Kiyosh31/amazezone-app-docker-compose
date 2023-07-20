@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "a0a48628-44bd-42f9-87dd-2a10a3558c3d",
+		"name": "user-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Signing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec1558a0-dbdd-4f0a-b04b-54cb7d292dfd",
+								"exec": [
+									"pm.environment.set(\"token\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "2648c140-4e8e-4e64-a240-a4013cc1bde5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"_postman_id": "e1e6b412-6d47-401d-8ea9-749a46914aca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"_postman_id": "4c4fb860-d9a1-4fcc-8f25-5ab539170a73",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}/64b809081205f84f117a5ccf"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"_postman_id": "6d186cd0-8d54-4fdc-92b4-9fabbe3241e4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"David\",\n    \"email\": \"test1@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"_postman_id": "5836694e-65cd-4796-86e3-05cd608d298c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"aqui se cambio\",\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}/64b809081205f84f117a5ccf"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"_postman_id": "b905f612-e740-4242-b252-3160209494a1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}/64b80bd71205f84f117a5ce0"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "ea19dc43-e087-4f1e-88c2-f9dedaedc00f"
+		},
+		{
+			"name": "Addresses",
+			"item": [
+				{
+					"name": "Create Address",
+					"_postman_id": "7b14fa2c-3e79-4e8b-92cf-4f2610071afa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64b809081205f84f117a5ccf\",\n    \"name\": \"David main address\",\n    \"address\": \"calle siempre viva\",\n    \"postalCode\": \"44340\",\n    \"phone\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{ADDRESS_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address",
+					"_postman_id": "19a5e55e-2925-45fb-9861-6b3b95b3326a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"64b80d587fda75bdcdf7b4ca\",\n    \"userId\": \"64b809081205f84f117a5ccf\",\n    \"name\": \"David main address\",\n    \"address\": \"calle siempre viva 123456\",\n    \"postalCode\": \"44340\",\n    \"phone\": \"1234567890\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{ADDRESS_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"_postman_id": "b5e8bafd-c8b9-42e1-b059-2d21bfc41470",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"64b80d587fda75bdcdf7b4ca\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/address"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "8213e7e7-f440-4808-920a-50b37fce1e1f"
+		},
+		{
+			"name": "Cards",
+			"item": [
+				{
+					"name": "Create Card",
+					"_postman_id": "a8b5b44d-c4f3-4894-9893-117a47cb94e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64b809081205f84f117a5ccf\",\n    \"name\": \"Credit Card 1\",\n    \"number\": \"123456789098\",\n    \"secretCode\": \"012\",\n    \"expiration\": \"12/27\",\n    \"type\": \"american express\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{CARD_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Card",
+					"_postman_id": "0e69102b-3b7d-47c6-8adb-d546fe1f1a27",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"64b80edbb0a3b59e2289edbc\",\n    \"userId\": \"64b809081205f84f117a5ccf\",\n    \"name\": \"te engane perro!\",\n    \"number\": \"123456789098\",\n    \"secretCode\": \"012\",\n    \"expiration\": \"12/27\",\n    \"type\": \"american express\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{CARD_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Card",
+					"_postman_id": "cdfbf91c-a0e2-4f06-b214-c8b0d6430b13",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"64b80edbb0a3b59e2289edbc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{CARD_URL}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
+		}
+	]
+}
