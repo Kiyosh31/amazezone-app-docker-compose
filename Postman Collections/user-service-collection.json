@@ -119,14 +119,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"aqui se cambio\",\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"username\": \"David\",\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}/64b809081205f84f117a5ccf"
+						"url": "{{BASE_URL}}{{USER_URL}}/64c7065da50d6b569b10cd3a"
 					},
 					"response": []
 				},
