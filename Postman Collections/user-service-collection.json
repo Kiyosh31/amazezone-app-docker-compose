@@ -22,7 +22,7 @@
 							}
 						}
 					],
-					"_postman_id": "2648c140-4e8e-4e64-a240-a4013cc1bde5",
+					"id": "2648c140-4e8e-4e64-a240-a4013cc1bde5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -31,7 +31,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"email\": \"test1@test.com\",\n    \"password\": \"thisismypassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 				},
 				{
 					"name": "Get All Users",
-					"_postman_id": "e1e6b412-6d47-401d-8ea9-749a46914aca",
+					"id": "e1e6b412-6d47-401d-8ea9-749a46914aca",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -63,7 +63,7 @@
 				},
 				{
 					"name": "Get User",
-					"_postman_id": "4c4fb860-d9a1-4fcc-8f25-5ab539170a73",
+					"id": "4c4fb860-d9a1-4fcc-8f25-5ab539170a73",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -82,7 +82,7 @@
 				},
 				{
 					"name": "Create User",
-					"_postman_id": "6d186cd0-8d54-4fdc-92b4-9fabbe3241e4",
+					"id": "6d186cd0-8d54-4fdc-92b4-9fabbe3241e4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -104,7 +104,7 @@
 				},
 				{
 					"name": "Update User",
-					"_postman_id": "5836694e-65cd-4796-86e3-05cd608d298c",
+					"id": "5836694e-65cd-4796-86e3-05cd608d298c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -132,7 +132,7 @@
 				},
 				{
 					"name": "Delete User",
-					"_postman_id": "b905f612-e740-4242-b252-3160209494a1",
+					"id": "b905f612-e740-4242-b252-3160209494a1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -150,14 +150,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "ea19dc43-e087-4f1e-88c2-f9dedaedc00f"
+			"id": "ea19dc43-e087-4f1e-88c2-f9dedaedc00f"
 		},
 		{
 			"name": "Addresses",
 			"item": [
 				{
 					"name": "Create Address",
-					"_postman_id": "7b14fa2c-3e79-4e8b-92cf-4f2610071afa",
+					"id": "7b14fa2c-3e79-4e8b-92cf-4f2610071afa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -185,7 +185,7 @@
 				},
 				{
 					"name": "Update Address",
-					"_postman_id": "19a5e55e-2925-45fb-9861-6b3b95b3326a",
+					"id": "19a5e55e-2925-45fb-9861-6b3b95b3326a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -213,7 +213,7 @@
 				},
 				{
 					"name": "Delete Address",
-					"_postman_id": "b5e8bafd-c8b9-42e1-b059-2d21bfc41470",
+					"id": "b5e8bafd-c8b9-42e1-b059-2d21bfc41470",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -240,14 +240,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "8213e7e7-f440-4808-920a-50b37fce1e1f"
+			"id": "8213e7e7-f440-4808-920a-50b37fce1e1f"
 		},
 		{
 			"name": "Cards",
 			"item": [
 				{
 					"name": "Create Card",
-					"_postman_id": "a8b5b44d-c4f3-4894-9893-117a47cb94e6",
+					"id": "a8b5b44d-c4f3-4894-9893-117a47cb94e6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -275,7 +275,7 @@
 				},
 				{
 					"name": "Update Card",
-					"_postman_id": "0e69102b-3b7d-47c6-8adb-d546fe1f1a27",
+					"id": "0e69102b-3b7d-47c6-8adb-d546fe1f1a27",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -303,7 +303,7 @@
 				},
 				{
 					"name": "Delete Card",
-					"_postman_id": "cdfbf91c-a0e2-4f06-b214-c8b0d6430b13",
+					"id": "cdfbf91c-a0e2-4f06-b214-c8b0d6430b13",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -330,7 +330,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
+			"id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
 		}
 	]
 }
