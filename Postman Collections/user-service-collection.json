@@ -76,7 +76,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}/64c89275c63eac607257e9cf"
+						"url": "{{BASE_URL}}{{USER_URL}}/64c933e4ff83789af1bf8091"
 					},
 					"response": []
 				},
