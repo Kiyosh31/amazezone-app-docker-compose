@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"productId\": \"64b2066a44a2b70367584fb3\",\n    \"userId\": \"64c936ce07a75187a00df87d\",\n    \"userName\": \"David\",\n    \"comment\": \"this is a comment\",\n    \"ratingStar\": 3.5\n}",
+							"raw": "{\n    \"productId\": \"64b2066a44a2b70367584fb3\",\n    \"userId\": \"64c936ce07a75187a00df87d\",\n    \"userName\": \"David\",\n    \"comment\": \"this is a comment 2\",\n    \"ratingStar\": 3.5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
