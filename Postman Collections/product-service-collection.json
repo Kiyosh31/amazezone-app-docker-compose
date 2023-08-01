@@ -133,7 +133,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get all comments",
 					"id": "81472bdc-5fe9-4be9-9d87-7891f069aa3c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
