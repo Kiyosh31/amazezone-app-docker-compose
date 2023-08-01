@@ -6,6 +6,11 @@
 	},
 	"item": [
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "e5422469-43f5-4c09-b0cb-e7588ae3f885"
+		},
+		{
 			"name": "Create Product",
 			"id": "d804bd00-9274-48f2-a985-05065bca7e3d",
 			"protocolProfileBehavior": {
