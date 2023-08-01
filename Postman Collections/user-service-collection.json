@@ -369,6 +369,15 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}"
 			},
 			"response": []
