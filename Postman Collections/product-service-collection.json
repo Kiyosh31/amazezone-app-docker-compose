@@ -127,7 +127,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}"
 					},
 					"response": []
 				}
