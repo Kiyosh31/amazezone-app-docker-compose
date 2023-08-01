@@ -119,7 +119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"al chile\",\n    \"birth\" \"jujuy\",\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"al chile\",\n    \"birth\": \"jujuy\",\n    \"email\": \"test@test.com\",\n    \"password\": \"thisismypassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
