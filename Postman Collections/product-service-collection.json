@@ -108,7 +108,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \n}",
+							"raw": "{\n    \"productId\": \"\",\n    \"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
