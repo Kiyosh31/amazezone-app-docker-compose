@@ -269,7 +269,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{CARD_URL}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}"
 					},
 					"response": []
 				},
