@@ -65,7 +65,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64b6d4697af04d728198c228"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64c983d636ff3051d24f3f19"
 					},
 					"response": []
 				},
