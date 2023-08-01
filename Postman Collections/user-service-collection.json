@@ -179,7 +179,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{ADDRESS_URL}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{ADDRESS_URL}}"
 					},
 					"response": []
 				},
