@@ -359,28 +359,6 @@
 				}
 			],
 			"id": "121ef8d3-a0b7-447b-9811-d9183695a4e8"
-		},
-		{
-			"name": "New Request",
-			"id": "f8ab18d8-902a-49f5-abb8-17170f692580",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}"
-			},
-			"response": []
 		}
 	]
 }
