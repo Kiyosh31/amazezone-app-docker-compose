@@ -131,6 +131,18 @@
 						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}/64c97ef7a00dae6648a4b81c"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "81472bdc-5fe9-4be9-9d87-7891f069aa3c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "f14db74e-d6a5-47e9-9e8b-858965fc18d7"
