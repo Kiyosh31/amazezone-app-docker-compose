@@ -49,7 +49,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{BASE_URL}}"
+				"url": "{{BASE_URL}}/products"
 			},
 			"response": []
 		},
