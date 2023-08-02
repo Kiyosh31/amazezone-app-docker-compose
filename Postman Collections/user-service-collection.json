@@ -328,6 +328,19 @@
 						"url": "{{BASE_URL}}{{CARD_URL}}/64c89fe77eaf237ee899fc06"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Card",
+					"id": "8516a59a-7fd2-485d-9383-c150b0b8cd1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": ""
+					},
+					"response": []
 				}
 			],
 			"id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
