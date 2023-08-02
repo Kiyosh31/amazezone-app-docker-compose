@@ -331,34 +331,6 @@
 				}
 			],
 			"id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
-		},
-		{
-			"name": "Seller",
-			"item": [
-				{
-					"name": "Create Seller",
-					"id": "3ca20a2b-0ac7-4bcb-9d68-41c2bcd46fe5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"Garcia\",\n    \"birth\": \"1996-03-31\",\n    \"email\": \"seller@test.com\",\n    \"password\": \"thisismypassword\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{BASE_URL}}{{SELLER_URL}}"
-					},
-					"response": []
-				}
-			],
-			"id": "121ef8d3-a0b7-447b-9811-d9183695a4e8"
 		}
 	]
 }
