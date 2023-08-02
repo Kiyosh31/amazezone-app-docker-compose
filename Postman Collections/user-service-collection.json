@@ -356,6 +356,34 @@
 						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/64cac3358fac3f97c7fed2fd"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Cards",
+					"id": "93f327e2-6f6a-4b13-ab63-333975d783d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/64cac3358fac3f97c7fed2fd"
+					},
+					"response": []
 				}
 			],
 			"id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
