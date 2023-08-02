@@ -338,7 +338,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": ""
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}"
 					},
 					"response": []
 				}
