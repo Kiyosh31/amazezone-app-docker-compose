@@ -172,7 +172,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": \"64cac3358fac3f97c7fed2fd\",\n    \"name\": \"David main address\",\n    \"address\": \"calle siempre viva\",\n    \"postalCode\": \"44340\",\n    \"phone\": \"1234567890\",\n    \"default\": true\n}",
+							"raw": "{\n    \"userId\": \"64cac3358fac3f97c7fed2fd\",\n    \"name\": \"David main address\",\n    \"address\": \"calle siempre viva 123\",\n    \"postalCode\": \"44340\",\n    \"phone\": \"1234567890\",\n    \"default\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
