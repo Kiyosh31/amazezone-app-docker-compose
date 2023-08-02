@@ -184,6 +184,34 @@
 					"response": []
 				},
 				{
+					"name": "Get Address",
+					"id": "26b7d07d-60b9-4141-8547-44cfacf5c7cf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"64cac3358fac3f97c7fed2fd\",\n    \"name\": \"David main address qwe\",\n    \"address\": \"calle siempre viva\",\n    \"postalCode\": \"44340\",\n    \"phone\": \"1234567890\",\n    \"default\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}{{ADDRESS_URL}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Update Address",
 					"id": "19a5e55e-2925-45fb-9861-6b3b95b3326a",
 					"protocolProfileBehavior": {
