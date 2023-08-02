@@ -297,7 +297,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{CARD_URL}}/64cad23ea605bbc37d0b4b37"
+						"url": "{{BASE_URL}}{{USER_URL}}s{{CARD_URL}}/64cad23ea605bbc37d0b4b37"
 					},
 					"response": []
 				},
