@@ -336,6 +336,10 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}"
