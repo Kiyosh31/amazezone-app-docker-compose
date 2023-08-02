@@ -342,7 +342,7 @@
 								"token": "{{token}}"
 							}
 						},
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
