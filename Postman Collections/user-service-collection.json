@@ -328,6 +328,34 @@
 						"url": "{{BASE_URL}}{{CARD_URL}}/64c89fe77eaf237ee899fc06"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Card",
+					"id": "a05e342a-1221-4424-a61e-f93c20b5f574",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{CARD_URL}}/64c89fe77eaf237ee899fc06"
+					},
+					"response": []
 				}
 			],
 			"id": "dc7c0714-899d-43c6-ab8a-ca1c43e6671e"
