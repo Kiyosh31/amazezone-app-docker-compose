@@ -154,7 +154,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}/all/{{USER_ID}}"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}/all/{{PRODUCT_ID}}"
 					},
 					"response": []
 				}
