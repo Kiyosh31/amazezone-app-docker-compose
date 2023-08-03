@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"prueba\",\n    \"description\": \"prueba\",\n    \"price\": 122,\n    \"brand\": \"prueba\",\n    \"stars\": 5\n}",
+							"raw": "{\n    \"userId\": \"\",\n    \"name\": \"prueba\",\n    \"description\": \"prueba\",\n    \"price\": 122,\n    \"brand\": \"prueba\",\n    \"stars\": 5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
