@@ -133,7 +133,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"al chile es garcia\",\n    \"birth\": \"jujuy\",\n    \"email\": \"seller@test.com\",\n    \"role\": \"seller\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"ya funciona puesn...\",\n    \"birth\": \"jujuy\",\n    \"email\": \"seller@test.com\",\n    \"role\": \"seller\",\n    \"password\": \"thisismypassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
