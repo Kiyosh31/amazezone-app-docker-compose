@@ -19,7 +19,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": \"\",\n    \"name\": \"prueba\",\n    \"description\": \"prueba\",\n    \"price\": 122,\n    \"brand\": \"prueba\",\n    \"stars\": 5\n}",
+							"raw": "{\n    \"userId\": \"64c936ce07a75187a00df87d\",\n    \"name\": \"product 1\",\n    \"description\": \"este product da cancer DX\",\n    \"price\": 1550,\n    \"brand\": \"amazon\",\n    \"stars\": 5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
