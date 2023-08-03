@@ -347,7 +347,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/64cbf2bf57502ba1645227a1"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/{{CARD_ID}}"
 					},
 					"response": []
 				},
