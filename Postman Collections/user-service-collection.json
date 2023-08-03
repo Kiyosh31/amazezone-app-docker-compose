@@ -89,7 +89,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}{{USER_ID}}"
+						"url": "{{BASE_URL}}{{USER_URL}}/"
 					},
 					"response": []
 				},
