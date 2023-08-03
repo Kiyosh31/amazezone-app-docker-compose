@@ -400,7 +400,7 @@
 							"script": {
 								"id": "aa5768db-3c1a-45b9-bfb7-a4de4b9850fe",
 								"exec": [
-									"const cardId = \"/\" + pm.response.json()[0]._id || null",
+									"const cardId = \"/\" + pm.response.json()[0]?._id || null",
 									"pm.environment.set(\"CARD_ID\", cardId)"
 								],
 								"type": "text/javascript"
