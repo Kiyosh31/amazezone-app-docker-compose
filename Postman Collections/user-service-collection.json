@@ -91,7 +91,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"Garcia\",\n    \"birth\": \"1996-03-31\",\n    \"email\": \"test12@test.com\",\n    \"role\": \"user\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"Garcia\",\n    \"birth\": \"1996-03-31\",\n    \"email\": \"jaja@test.com\",\n    \"role\": \"user\",\n    \"password\": \"thisismypassword\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
