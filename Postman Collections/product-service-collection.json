@@ -38,8 +38,8 @@
 							"script": {
 								"id": "fe8a1b65-8de3-440e-bc50-0339adc76683",
 								"exec": [
-									"const addressId = \"/\" + pm.response.json()?.ID || null ",
-									"pm.environment.set(\"PRODUCT_ID\", addressId)"
+									"const productId = \"/\" + pm.response.json()?.ID || null ",
+									"pm.environment.set(\"PRODUCT_ID\", productId)"
 								],
 								"type": "text/javascript"
 							}
