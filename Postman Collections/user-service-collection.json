@@ -140,7 +140,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}/64caf73ad60790aab3857a2b"
+						"url": "{{BASE_URL}}{{USER_URL}}{{USER_ID}}"
 					},
 					"response": []
 				},
