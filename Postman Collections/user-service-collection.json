@@ -333,7 +333,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_ID}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}"
 					},
 					"response": []
 				},
