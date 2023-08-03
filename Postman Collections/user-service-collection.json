@@ -63,6 +63,18 @@
 				},
 				{
 					"name": "Get User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "221a2667-1017-4984-98c7-1f7435d62620",
+								"exec": [
+									"pm.environment.set(\"USER_ID\", pm.response.json()._id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "4c4fb860-d9a1-4fcc-8f25-5ab539170a73",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
