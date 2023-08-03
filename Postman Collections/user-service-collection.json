@@ -204,7 +204,7 @@
 							"script": {
 								"id": "b5430d1f-4b94-4fed-a3cf-7ee7b1ee4bb2",
 								"exec": [
-									"const addressId = \"/\" + pm.response.json()?._id || null",
+									"const addressId = \"/\" + pm.response.json()._id || null",
 									"pm.environment.set(\"ADDRESS_ID\", addressId)"
 								],
 								"type": "text/javascript"
