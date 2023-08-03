@@ -145,7 +145,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}/64caf73ad60790aab3857a2b"
+						"url": "{{BASE_URL}}{{USER_URL}}/64caee38a62c35145bfc905f"
 					},
 					"response": []
 				}
