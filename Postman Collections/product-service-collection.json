@@ -32,6 +32,19 @@
 				},
 				{
 					"name": "Get Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe8a1b65-8de3-440e-bc50-0339adc76683",
+								"exec": [
+									"const addressId = \"/\" + pm.response.json()?.ID || null ",
+									"pm.environment.set(\"PRODUCT_ID\", addressId)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "3be5e849-5359-4f9c-9bbc-6f52cfd6eae2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
