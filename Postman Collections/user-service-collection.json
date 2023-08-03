@@ -199,6 +199,20 @@
 				},
 				{
 					"name": "Get Address",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5430d1f-4b94-4fed-a3cf-7ee7b1ee4bb2",
+								"exec": [
+									"if(pm.response.json()._id) {",
+									"    pm.environment.set(\"USER_ID\", `/${pm.response.json()._id}`)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "26b7d07d-60b9-4141-8547-44cfacf5c7cf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
