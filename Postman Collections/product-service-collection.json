@@ -141,7 +141,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}/64c97ef7a00dae6648a4b81c"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{COMMENT_URL}}/64cc0c32b14aaec1a64b7331"
 					},
 					"response": []
 				},
