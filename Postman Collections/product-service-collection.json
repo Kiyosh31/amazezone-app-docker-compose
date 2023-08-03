@@ -39,7 +39,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64c983d636ff3051d24f3f19"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64cc0b0ab14aaec1a64b732f"
 					},
 					"response": []
 				},
