@@ -69,8 +69,7 @@
 							"script": {
 								"id": "221a2667-1017-4984-98c7-1f7435d62620",
 								"exec": [
-									"const userId = \"/\" + pm.response.json()?._id || null ",
-									"pm.environment.set(\"USER_ID\", userId)"
+									""
 								],
 								"type": "text/javascript"
 							}
