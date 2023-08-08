@@ -457,7 +457,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/all{{USER_ID}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/all/"
 					},
 					"response": []
 				}
