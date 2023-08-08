@@ -360,7 +360,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/64d2ce5881d2dd469e3f04df"
 					},
 					"response": []
 				},
