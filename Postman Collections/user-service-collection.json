@@ -430,7 +430,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}{{USER_ID}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{CARD_URL}}/64d2c477ac2b9000421d48c2"
 					},
 					"response": []
 				},
