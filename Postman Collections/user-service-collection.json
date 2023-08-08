@@ -353,7 +353,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"userId\": \"64d2c477ac2b9000421d48c2\",\n    \"name\": \"cambio vamos de vuelta\",\n    \"number\": 12345678909,\n    \"secretCode\": \"012\",\n    \"expiration\": \"12/27\",\n    \"type\": \"american express\",\n    \"default\": true\n}",
+							"raw": "{\n    \"userId\": \"64d2c477ac2b9000421d48c2\",\n    \"name\": \"jajaja\",\n    \"number\": 12345678909,\n    \"secretCode\": \"012\",\n    \"expiration\": \"12/27\",\n    \"type\": \"american express\",\n    \"default\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
