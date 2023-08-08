@@ -269,7 +269,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}{{ADDRESS_URL}}{{ADDRESS_ID}}"
+						"url": "{{BASE_URL}}{{USER_URL}}{{ADDRESS_URL}}/"
 					},
 					"response": []
 				},
