@@ -81,10 +81,7 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
