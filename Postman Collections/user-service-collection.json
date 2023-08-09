@@ -16,7 +16,7 @@
 							"script": {
 								"id": "ec1558a0-dbdd-4f0a-b04b-54cb7d292dfd",
 								"exec": [
-									"pm.environment.set(\"token\", pm.response.json().token)"
+									"pm.environment.set(\"token\", pm.response.json().Token)"
 								],
 								"type": "text/javascript"
 							}
