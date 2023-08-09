@@ -88,7 +88,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}/64d2edcd508d365bb6d7615c"
+						"url": "{{BASE_URL}}{{USER_URL}}/64d3cf92fd7eb7de00e39f80"
 					},
 					"response": []
 				},
