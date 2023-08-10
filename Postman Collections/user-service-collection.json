@@ -103,7 +103,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"David\",\n    \"lastName\": \"Garcia\",\n    \"birth\": \"1996-03-31\",\n    \"email\": \"jaja@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"raw": "{\n    \"user\": {\n        \"name\": \"David\",\n        \"lastName\": \"Garcia\",\n        \"birth\": \"1996-03-31\",\n        \"email\": \"jaja@test.com\",\n        \"password\": \"thisismypassword\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
