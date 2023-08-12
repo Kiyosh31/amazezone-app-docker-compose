@@ -89,7 +89,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}/64d7cf8c8ac50052ffdc1b65"
+						"url": "{{BASE_URL}}{{USER_URL}}/64d7ee66985720f66c5bdc42"
 					},
 					"response": []
 				},
