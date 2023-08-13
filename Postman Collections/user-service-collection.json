@@ -271,7 +271,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{USER_URL}}"
+						"url": "{{BASE_URL}}{{SELLER_URL}}"
 					},
 					"response": []
 				},
