@@ -9,7 +9,7 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "Signing",
+					"name": "Signing Customer",
 					"event": [
 						{
 							"listen": "test",
