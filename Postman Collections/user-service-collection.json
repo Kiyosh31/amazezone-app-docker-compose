@@ -223,7 +223,7 @@
 					"response": []
 				},
 				{
-					"name": "Get User",
+					"name": "Get Seller",
 					"event": [
 						{
 							"listen": "test",
