@@ -176,7 +176,8 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": {}
 						},
 						"method": "POST",
 						"header": [],
