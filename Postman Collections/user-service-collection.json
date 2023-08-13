@@ -276,7 +276,7 @@
 					"response": []
 				},
 				{
-					"name": "Update User",
+					"name": "Update Seller",
 					"id": "c052dfa3-5681-4a8e-a4bd-593465ac2ad9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
