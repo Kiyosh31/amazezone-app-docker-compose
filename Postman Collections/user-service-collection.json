@@ -254,7 +254,7 @@
 					"response": []
 				},
 				{
-					"name": "Create User",
+					"name": "Create Seller",
 					"id": "ff21103b-1999-433c-a659-28e3e9361be8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
