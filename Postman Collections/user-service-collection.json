@@ -177,7 +177,9 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {}
+							"bearer": {
+								"token": "{{token}}"
+							}
 						},
 						"method": "POST",
 						"header": [],
