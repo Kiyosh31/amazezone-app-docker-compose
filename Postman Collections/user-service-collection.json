@@ -249,7 +249,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}{{SELLER_URL}}/64d7f150db614105c9ac9a51"
+						"url": "{{BASE_URL}}{{USER_URL}}{{SELLER_URL}}/64d93040717654bf1c639884"
 					},
 					"response": []
 				},
