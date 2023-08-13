@@ -318,7 +318,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{BASE_URL}}{{USER_URL}}/64d7ee66985720f66c5bdc42"
+						"url": "{{BASE_URL}}{{USER_URL}}{{SELLER_URL}}/"
 					},
 					"response": []
 				}
