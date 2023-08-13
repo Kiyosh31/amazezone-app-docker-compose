@@ -166,6 +166,166 @@
 			"id": "ea19dc43-e087-4f1e-88c2-f9dedaedc00f"
 		},
 		{
+			"name": "Seller",
+			"item": [
+				{
+					"name": "Signing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec1558a0-dbdd-4f0a-b04b-54cb7d292dfd",
+								"exec": [
+									"const token = pm.response.json().token || pm.response.json().Token",
+									"pm.environment.set(\"token\", token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "79532d28-873c-4d03-8aa5-56432fa5a496",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jaja@test.com\",\n    \"password\": \"thisismypassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"id": "6e4dcb1c-d9a0-48f5-8910-abea80500ef9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "221a2667-1017-4984-98c7-1f7435d62620",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "616c5468-4dd2-4e8c-bc06-0d93220d623e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}/64d7f150db614105c9ac9a51"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"id": "ff21103b-1999-433c-a659-28e3e9361be8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"name\": \"David\",\n        \"lastName\": \"Garcia\",\n        \"birth\": \"1996-03-31\",\n        \"email\": \"jaja@test.com\",\n        \"password\": \"thisismypassword\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"id": "c052dfa3-5681-4a8e-a4bd-593465ac2ad9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"name\": \"David\",\n        \"lastName\": \"gonzales\",\n        \"birth\": \"2023-03-31\",\n        \"email\": \"jaja@test.com\",\n        \"role\": \"seller\",\n        \"password\": \"thisismypassword\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}{{USER_URL}}/64d7f150db614105c9ac9a51"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"id": "31e7a3e9-d442-4383-a980-4439a6e0a2ad",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}{{USER_URL}}/64d7ee66985720f66c5bdc42"
+					},
+					"response": []
+				}
+			],
+			"id": "e1087202-0e99-406a-8c1d-b2eff279dd51"
+		},
+		{
 			"name": "Address",
 			"item": [
 				{
