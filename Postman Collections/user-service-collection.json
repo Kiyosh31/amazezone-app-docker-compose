@@ -204,7 +204,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Users",
+					"name": "Get All Sellers",
 					"id": "6e4dcb1c-d9a0-48f5-8910-abea80500ef9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
