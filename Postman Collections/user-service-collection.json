@@ -169,7 +169,7 @@
 			"name": "Seller",
 			"item": [
 				{
-					"name": "Signing",
+					"name": "Signing Seller",
 					"event": [
 						{
 							"listen": "test",
