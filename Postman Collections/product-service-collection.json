@@ -86,7 +86,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}{{PRODUCT_ID}}"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64d9872cca19e8ed477b775b"
 					},
 					"response": []
 				}
