@@ -51,7 +51,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64d9872cca19e8ed477b775b"
+						"url": "{{BASE_URL}}{{PRODUCT_URL}}/64da5e83a26171443802388e"
 					},
 					"response": []
 				},
