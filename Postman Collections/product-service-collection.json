@@ -56,19 +56,6 @@
 					"response": []
 				},
 				{
-					"name": "Get All Products",
-					"id": "1729b551-b24f-421b-a0ef-1550a59c50f2",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{BASE_URL}}{{PRODUCT_URL}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Delete Product",
 					"id": "8b22dcc6-afc8-4c86-9be0-46f8b77ef232",
 					"protocolProfileBehavior": {
